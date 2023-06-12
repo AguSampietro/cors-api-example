@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Http;
 using System.Web.Routing;
+using ProyectoWebApi.MessageHandlers;
 
 namespace ProyectoWebApi
 {
@@ -13,6 +14,7 @@ namespace ProyectoWebApi
         {
             GlobalConfiguration.Configure(WebApiConfig.Register);
             GlobalConfiguration.Configuration.Formatters.XmlFormatter.SupportedMediaTypes.Clear();
+            GlobalConfiguration.Configuration.MessageHandlers.Add(new ApiKeyMessageHandler());
         }
     }
 }
